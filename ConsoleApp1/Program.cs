@@ -14,13 +14,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            TreeTest1();
+            //TreeTest1();
 
             //new: 假如运行A a = new B();a.Method();会输出This Method in Class A!,
             //这是因为class B继承于class A，现在B中的Method函数隐藏A中的Method，
             //所以从B(包括继承于B的子类)的角度来看类中的Method就是B.Method，A的Method不可见，
             //但是如果从A的角度来看B，A只认识类B中继承于类A的Method函数,对于B类中的Method它不可见，
-            //所以A a=new B();a.Method();相当于是调用了类B中继承于A的Method函数
+            //所以A a = new B();a.Method();相当于是调用了类B中继承于A的Method函数
             A a = new B1();
             a.Method();
             B1 b = new B1();
@@ -38,16 +38,29 @@ namespace ConsoleApp1
             //接口在相互继承的时候也会隐藏基接口的同名属性或函数，但是对于接口来说很特殊，隐藏对于基接口来说是不起作用的，
             //接口内部的属性和函数都只是声明，它们都指向实现接口的类中的同名实现函数，通过接口调用接口的属性和函数的时候都会去调用实现类中从上到下最先可见的同名函数和同名属性:
             //Sample2
-            Polymorphism.Sample2.IA ia = new Polymorphism.Sample2.ISubClass();
+            Polymorphism.Sample2.IA ia = new Polymorphism.Sample2.ImplementSubClass();
             ia.Method();
+            ia.MethodIA();
 
-            Polymorphism.Sample2.ISubClass isub = new Polymorphism.Sample2.ISubClass();
+            Polymorphism.Sample2.ImplementSubClass isub = new Polymorphism.Sample2.ImplementSubClass();
             isub.Method();
+            isub.MethodIA();
+            isub.MethodIB();
 
+            Polymorphism.Sample2.ImplementClass mainClass = new Polymorphism.Sample2.ImplementSubClass();
+            mainClass.Method();
+
+            Polymorphism.Sample2.IA ia_1 = new Polymorphism.Sample2.ImplementSubDClass();
+            ia_1.Method();
+
+            //因为父Class中Method是Virtual虚方法，当申明子类实列时，执行子类中方法
             Polymorphism.Sample3.IA ia2 = new Polymorphism.Sample3.ISubClass();
             ia2.Method();
+            //因为父Class中Method是Virtual虚方法，当申明父类实列时，执行父类中方法
+            Polymorphism.Sample3.IA ia2_1 = new Polymorphism.Sample3.IClass();
+            ia2_1.Method();
 
-
+            //
             Polymorphism.Sample4.Parent childOne = new Polymorphism.Sample4.ChildOne();
             Polymorphism.Sample4.Parent childTwo = new Polymorphism.Sample4.ChildTwo();
             //调用Parent.F()
@@ -56,6 +69,8 @@ namespace ConsoleApp1
             //实现多态
             childOne.G();
             childTwo.G();
+
+            //重载案列
             Polymorphism.Sample4.Parent load = new Polymorphism.Sample4.Parent();
             //重载(overload)
             Console.WriteLine(load.Add(1, 2));

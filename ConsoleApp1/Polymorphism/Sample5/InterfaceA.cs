@@ -57,17 +57,23 @@ namespace ConsoleApp1.Polymorphism.Sample5
         {
             Console.WriteLine("this is a test:JavaBook override virtual getName()");
         }
+        public new void GetDate()
+        {
+            Console.WriteLine("this is a test:JavaBook new GetDate()");
+        }
     }
 
     public class Test1
     {
         public Test1()
         {
-            JavaBook jbook = new JavaBook();
+            Book jbook = new JavaBook();
             jbook.GetPrice(); //将调用JavaBook中GetPrice()
             jbook.GetName(); //将调用JavaBook中GetName()
-            jbook.GetContent(); //将调用Book中GetContent()
-            jbook.GetDate(); //将调用Book中GetDate()
+            jbook.GetContent(); //将调用Abstract Book中GetContent()
+            jbook.GetDate(); //将调用Abstract Book中GetDate()
+
+            jbook.GetDate();
         }
     }
 }

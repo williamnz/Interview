@@ -15,13 +15,14 @@ namespace ConsoleApp1.Polymorphism.Sample4
         //4.重写属性声明必须指定与继承的属性完全相同的访问修饰符、类型和名称。 
         //5.重写的属性必须是virtual、abstract或override。 
         //6.不能重写非虚方法或静态方法。 
-        //7.父类中有abstract，那么子类同名方法必定有override，若父类中有 virtual方法，子类同名方法不一定是override，可能是overload。 
+        //7.父类中有abstract，那么子类同名方法必定有override，若父类中有 virtual方法，子类同名方法不一定是override，
+        //可能是overload。 
         //8.override必定有父子类关系。
         public void F()
         {
             Console.WriteLine("Parent.F()");
         }
-        public virtual void G() //抽象方法
+        public virtual void G() //虚拟方法
         {
             Console.WriteLine("Parent.G()");
         }

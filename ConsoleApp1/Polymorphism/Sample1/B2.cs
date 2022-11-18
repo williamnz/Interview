@@ -10,7 +10,7 @@ namespace ConsoleApp1.Polymorphism.Sample1
     {
         public override void Method()
         {
-            Console.WriteLine("This Method in Class B!");
+            Console.WriteLine("This Method in Class B2 override from Class A");
         }
     }
 }
