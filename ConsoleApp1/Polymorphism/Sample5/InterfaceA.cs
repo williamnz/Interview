@@ -63,6 +63,18 @@ namespace ConsoleApp1.Polymorphism.Sample5
         }
     }
 
+    public class CBook : Book, IPerson
+    {
+        public void GetAge(string s)
+        {
+            Console.WriteLine("this is a test:CBook new GetAge()");
+        }
+        public override void GetPrice()
+        {
+            Console.WriteLine("this is a test:CBook new GetPrice()");
+        }
+    }
+
     public class Test1
     {
         public Test1()
@@ -73,7 +85,9 @@ namespace ConsoleApp1.Polymorphism.Sample5
             jbook.GetContent(); //将调用Abstract Book中GetContent()
             jbook.GetDate(); //将调用Abstract Book中GetDate()
 
-            jbook.GetDate();
+
+            IPerson p = new CBook();
+            p.GetName();
         }
     }
 }

@@ -9,12 +9,12 @@ namespace ConsoleApp1.Polymorphism.Sample5
     //打印机接口
     public interface IPrint
     {
-        string returnPrintName();
+        string ReturnPrintName();
     }
     //HP牌打印机类
     public class HP : IPrint
     {
-        public string returnPrintName()
+        public string ReturnPrintName()
         {
             return "这是HP牌打印机";
         }
@@ -22,7 +22,7 @@ namespace ConsoleApp1.Polymorphism.Sample5
     //Eps牌打印机类
     public class Eps : IPrint
     {
-        public string returnPrintName()
+        public string ReturnPrintName()
         {
             return "这是Eps牌打印机";
         }
@@ -30,16 +30,13 @@ namespace ConsoleApp1.Polymorphism.Sample5
     //打印类
     public class Printer
     {
-        public Printer()
-        { }
+        public Printer() { }
         public string PrintName(IPrint iPrint)
         {
-            return iPrint.returnPrintName();
-        }
-
-        
-        
+            return iPrint.ReturnPrintName();
+        }           
     }
+
     public class Test
     {
         public Test(string name)

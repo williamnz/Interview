@@ -42,6 +42,10 @@ namespace ConsoleApp1
             ia.Method();
             ia.MethodIA();
 
+            Polymorphism.Sample2.IB ib = new Polymorphism.Sample2.ImplementSubClass();
+            ib.Method();
+            ib.MethodIA();
+
             Polymorphism.Sample2.ImplementSubClass isub = new Polymorphism.Sample2.ImplementSubClass();
             isub.Method();
             isub.MethodIA();
@@ -77,6 +81,9 @@ namespace ConsoleApp1
             Console.WriteLine(load.Add(3.4f, 4.5f));
 
             //抽象类不能实列化(如Book)
+            Polymorphism.Sample5.Test1 test1 = new Polymorphism.Sample5.Test1();
+
+            Polymorphism.Sample5.Test Test2 = new Polymorphism.Sample5.Test("HP");
 
             //HeapShiftUpTest();
             Console.Read();
