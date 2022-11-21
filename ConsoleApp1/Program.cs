@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Heap;
+using ConsoleApp1.Other;
 using ConsoleApp1.Polymorphism.Sample1;
 using ConsoleApp1.Tree;
 using System;
@@ -14,6 +15,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            LearnJoin lj = new LearnJoin();
+            lj.FullOuterJoin();
             //TreeTest1();
 
             //new: 假如运行A a = new B();a.Method();会输出This Method in Class A!,
