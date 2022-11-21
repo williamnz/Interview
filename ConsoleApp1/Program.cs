@@ -15,8 +15,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            LearnDelegate ld = new LearnDelegate();
+            ld.FuncTest();
+            ld.ActionTest();
+            ld.PredictTest();
+
             LearnJoin lj = new LearnJoin();
             lj.FullOuterJoin();
+
             //TreeTest1();
 
             //new: 假如运行A a = new B();a.Method();会输出This Method in Class A!,
