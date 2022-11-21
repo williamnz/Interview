@@ -13,8 +13,11 @@ namespace ConsoleApp1
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+            //锁定资源的测试
+            await AccountTest.Entry();
+
             LearnDelegate ld = new LearnDelegate();
             ld.FuncTest();
             ld.ActionTest();

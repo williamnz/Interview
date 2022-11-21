@@ -54,6 +54,8 @@
     <Compile Include="Interpreter\Expression.cs" />
     <Compile Include="Interpreter\TerminalExpression.cs" />
     <Compile Include="LCS\GFG.cs" />
+    <Compile Include="Other\Account.cs" />
+    <Compile Include="Other\AccountTest.cs" />
     <Compile Include="Other\LearnDelegate.cs" />
     <Compile Include="Other\LearnJoin.cs" />
     <Compile Include="Polymorphism\Sample1\A.cs" />
